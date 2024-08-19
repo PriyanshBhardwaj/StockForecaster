@@ -1,0 +1,10 @@
+kafka-python
+requests
+pandas
+matplotlib
+beautifulsoup4
+scikit-learn
+streamlit == 1.37.0
+xgboost == 2.0.3
+pytz
+pybase64

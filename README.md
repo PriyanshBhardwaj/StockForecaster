@@ -9,6 +9,9 @@ This app provides real-time forecasting to help you anticipate short-term market
 Use this tool to stay ahead in the stock market by making data-driven decisions!
 
 
+**visit the Stock Forecaster:** https://stocksforecaster.streamlit.app/
+
+
 **Connnect with me:**
 * LinkedIn: https://www.linkedin.com/in/priyansh-bhardwaj-25964317a/
 * Website: https://priyansh-portfolio.streamlit.app/

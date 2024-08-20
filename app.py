@@ -129,7 +129,7 @@ def create_combined_chart(prev_nifty_df, new_nifty_df, prev_min_value, prev_max_
             )
         ).encode(
             x=alt.X('Time:T', title="Time"),
-            y=alt.Y('Open:Q', title="Nifty50 Open", scale=alt.Scale(domain=[prev_min_value-100, prev_max_value+50]), stack=None),
+            y=alt.Y('Open:Q', title="Nifty50 Open", scale=alt.Scale(domain=[min_value-100, max_value+50]), stack=None),
             tooltip=[
                 alt.Tooltip('Time:T', format='%Y-%m-%d %H:%M:%S'),
                 alt.Tooltip('Open:Q')
@@ -234,7 +234,7 @@ def create_combined_chart(prev_nifty_df, new_nifty_df, prev_min_value, prev_max_
 
 ## main streamlit app
 def app():
-    st.set_page_config(page_title='Stock forecaster', page_icon='📈', layout='wide')
+    st.set_page_config(page_title='Stocks Forecaster', page_icon='📈', layout='wide')
     # emoji shortcut: CTRL + CMD + Space
 
     #loading the models
@@ -250,7 +250,8 @@ def app():
     st.markdown(hide_default_format, unsafe_allow_html=True)
 
     cola, colb = st.columns([5,2])
-    cola.title("Stock Forecaster")
+    
+    cola.title("Stocks Forecaster")
 
     with colb:
         colb.write('#')
@@ -260,7 +261,7 @@ def app():
             st.write("[LinkedIn](https://www.linkedin.com/in/priyansh-bhardwaj-25964317a)")
 
 
-    st.subheader("Welcome to the Stock Forecaster!", anchor=False)
+    st.subheader("Welcome to the Stocks Forecaster!", anchor=False)
 
     st.write("Stock Forecaster is a sophisticated tool designed to predict the Nifty50 open values for the upcoming 15 minutes. The Nifty50 index, which tracks the performance of the top 50 stocks in the Indian stock market, is a critical measure of market health.")
 
@@ -268,7 +269,7 @@ def app():
 
     st.write("With Stock Forecaster, you receive both visual and textual predictions, enhancing your ability to make informed trading decisions and navigate the stock market effectively.")
     
-    st.write("Use this tool to stay ahead in the stock market by making data-driven decisions!", anchor=False)
+    st.write("Use this tool to stay ahead in the stock market by making data-driven decisions!")
     
     st.subheader('''How It Works:
                     \n - **Real-Time Analysis:** The app takes real-time Nifty50 open values as input.
@@ -343,7 +344,10 @@ def app():
 
 
 if __name__ == "__main__":
-    app()
+    try:
+        app()
+    except Exception as e:
+        st.write("An error has been occured! Please wait for a while")
    
 
 

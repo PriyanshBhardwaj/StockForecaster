@@ -288,7 +288,7 @@ if __name__ == "__main__":
 # preds_2 = []
 
 # for i in range(len(preds_1)):
-#   preds_2.append(np.float(model2.predict([preds_1[i]])))
+#   preds_2.append(np.float64(model2.predict([preds_1[i]])))
 
 
 # diff = [original[i] - preds_2[i] for i in range(len(preds_2))]
